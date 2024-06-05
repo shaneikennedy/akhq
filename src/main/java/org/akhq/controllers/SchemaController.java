@@ -170,7 +170,7 @@ public class SchemaController extends AbstractController {
 
         return this.schemaRepository.getSubjectsBySchemaId(cluster, id)
             .stream()
-            .filter(s -> topic == null || s.getSubject().contains(topic))
+            .filter(s -> topic == null || !s.getSubject().contains(topic))
             .findFirst()
             .orElse(null);
     }
